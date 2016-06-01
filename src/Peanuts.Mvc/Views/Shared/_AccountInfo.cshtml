@@ -1,0 +1,15 @@
+@using Microsoft.AspNetCore.Mvc.Rendering
+
+@if (Context.User.Identity.IsAuthenticated)
+{
+    <li class="navbar-text">@Context.User.Identity.Name</li>
+    <li>
+        @Html.ActionLink("Log Out", "Logout", "Account")
+    </li>
+}
+else
+{
+    <li>
+        @Html.ActionLink("Log in", "Login","Account")
+    </li>
+}
